@@ -1,16 +1,9 @@
-# untitled
+# Talabaty
 
-A new Flutter project.
+Talabaty app UI ....
 
-## Getting Started
+ ::::
+ 
+ ![flutter9](https://user-images.githubusercontent.com/72813143/187076399-d0952bcf-7d89-4546-b926-3fad30398e13.jpg)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://user-images.githubusercontent.com/72813143/187076393-6e364761-a883-481b-8e52-f5dbc21e9eb2.mp4
