@@ -82,256 +82,282 @@ class _ResturantPageState extends State<ResturantPage> {
                     right: 10,
                     top: 30,
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        widget.resName,
-                        style: TextStyle(
-                          color: primaryColor,
-                          fontSize: 35,
-                        ),
-                        textAlign: TextAlign.right,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20, bottom: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                buildResturantDetailsRow(
-                                  Icon(
-                                    Icons.tag_faces_sharp,
-                                    color: Colors.black54,
-                                    size: 26,
-                                  ),
-                                  widget.rate,
-                                ),
-                                SizedBox(height: 20,),
-                                buildResturantDetailsRow(
-                                  Icon(
-                                    Icons.price_check,
-                                    color: Colors.black54,
-                                    size: 26,
-                                  ),
-                                  "الحد الأدنى للطلب: ${widget.minOrderPrice} د.ع",
-                                ),
-                              ],
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                buildResturantDetailsRow(
-                                  Icon(
-                                    Icons.delivery_dining,
-                                    color: Colors.black54,
-                                    size: 26,
-                                  ),
-                                  "سعر التوصيل: ${widget.deliverPrice} د.ع",
-                                ),
-                                SizedBox(height: 20,),
-                                buildResturantDetailsRow(
-                                  Icon(
-                                    Icons.location_on,
-                                    color: Colors.black54,
-                                    size: 26,
-                                  ),
-                                  widget.resLocation,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      buildResturantDetailsRow(
-                        Icon(
-                          Icons.access_time,
-                          color: Colors.black54,
-                          size: 26,
-                        ),
-                        "وقت التوصيل المتوقع من ساعة الى نصف ساعة",
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20, bottom: 20,),
-                        child: Text(
-                          "سندوتش فيليه دجاج",
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          widget.resName,
                           style: TextStyle(
                             color: primaryColor,
                             fontSize: 35,
                           ),
                           textAlign: TextAlign.right,
                         ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        width: MediaQuery.of(context).size.width * 0.95,
-                        height: MediaQuery.of(context).size.height * 0.1,
-                        decoration: BoxDecoration(
-                          color: lightGreyColor,
-                          borderRadius: BorderRadius.circular(15)
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Ionicons.chevron_up_outline,
-                              color: Colors.black54,
-                              size: 30,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Text(
-                                  "اضافات",
-                                  style: TextStyle(
-                                    color: primaryColor,
-                                    fontSize: 26,
+                        Padding(
+                          padding: EdgeInsets.only(top: 15, bottom: 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  buildResturantDetailsRow(
+                                    Icon(
+                                      Icons.tag_faces_sharp,
+                                      color: Colors.black54,
+                                      size: 26,
+                                    ),
+                                    widget.rate,
                                   ),
-                                  textAlign: TextAlign.right,
-                                ),
-                                Text(
-                                  "اختياري",
-                                  style: TextStyle(
-                                    color: Colors.black54,
-                                    fontSize: 22,
+                                  SizedBox(height: 20,),
+                                  buildResturantDetailsRow(
+                                    Icon(
+                                      Icons.price_check,
+                                      color: Colors.black54,
+                                      size: 26,
+                                    ),
+                                    "الحد الأدنى للطلب: ${widget.minOrderPrice} د.ع",
                                   ),
-                                  textAlign: TextAlign.right,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20, bottom: 10,),
-                        child: Text(
-                          "تعليمات خاصة",
-                          style: TextStyle(
-                            color: Colors.black87,
-                            fontSize: 24,
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  buildResturantDetailsRow(
+                                    Icon(
+                                      Icons.delivery_dining,
+                                      color: Colors.black54,
+                                      size: 26,
+                                    ),
+                                    "سعر التوصيل: ${widget.deliverPrice} د.ع",
+                                  ),
+                                  SizedBox(height: 20,),
+                                  buildResturantDetailsRow(
+                                    Icon(
+                                      Icons.location_on,
+                                      color: Colors.black54,
+                                      size: 26,
+                                    ),
+                                    widget.resLocation,
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
-                          textAlign: TextAlign.right,
                         ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        width: MediaQuery.of(context).size.width * 0.95,
-                        height: MediaQuery.of(context).size.height * 0.07,
-                        decoration: BoxDecoration(
-                            color: lightGreyColor,
-                            borderRadius: BorderRadius.circular(15)
-                        ),
-                        child:  Text(
-                          "اذا كانت لديك أي ملاحظات تخص الطلب يرجى كتابتها هنا",
-                          style: TextStyle(
+                        buildResturantDetailsRow(
+                          Icon(
+                            Icons.access_time,
                             color: Colors.black54,
-                            fontSize: 22,
+                            size: 26,
                           ),
-                          textAlign: TextAlign.right,
+                          "وقت التوصيل المتوقع من ساعة الى نصف ساعة",
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 40, bottom: 15,),
-                        child: Row(
+                        Padding(
+                          padding: EdgeInsets.only(top: 15, bottom: 20,),
+                          child: Text(
+                            "سندوتش فيليه دجاج",
+                            style: TextStyle(
+                              color: primaryColor,
+                              fontSize: 35,
+                            ),
+                            textAlign: TextAlign.right,
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          width: MediaQuery.of(context).size.width * 0.95,
+                          height: MediaQuery.of(context).size.height * 0.1,
+                          decoration: BoxDecoration(
+                              color: lightGreyColor,
+                              borderRadius: BorderRadius.circular(15)
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Ionicons.chevron_up_outline,
+                                color: Colors.black54,
+                                size: 30,
+                              ),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    "اضافات",
+                                    style: TextStyle(
+                                      color: primaryColor,
+                                      fontSize: 26,
+                                    ),
+                                    textAlign: TextAlign.right,
+                                  ),
+                                  Text(
+                                    "اختياري",
+                                    style: TextStyle(
+                                      color: Colors.black54,
+                                      fontSize: 22,
+                                    ),
+                                    textAlign: TextAlign.right,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 15, bottom: 10,),
+                          child: Text(
+                            "تعليمات خاصة",
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 24,
+                            ),
+                            textAlign: TextAlign.right,
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          width: MediaQuery.of(context).size.width * 0.95,
+                          height: MediaQuery.of(context).size.height * 0.07,
+                          decoration: BoxDecoration(
+                              color: lightGreyColor,
+                              borderRadius: BorderRadius.circular(15)
+                          ),
+                          child:  Text(
+                            "اذا كانت لديك أي ملاحظات تخص الطلب يرجى كتابتها هنا",
+                            style: TextStyle(
+                              color: Colors.black54,
+                              fontSize: 22,
+                            ),
+                            textAlign: TextAlign.right,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 20, bottom: 15,),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  print("Hmmmmm");
+                                  setState(() {
+                                    print("Hmmmmm");
+                                    if(counter > 1) {
+                                      counter --;
+                                      price -= 6500;
+                                    }
+                                  });
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.all(10),
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: lightGreyColor,
+                                    borderRadius: BorderRadius.circular(25),
+                                  ),
+                                  child: Icon(
+                                    Icons.remove,
+                                    color: Colors.black87,
+                                    size: 32,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 20, right: 20,),
+                                child: Container(
+                                  padding: EdgeInsets.all(5),
+                                  width: 100,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: lightGreyColor,
+                                    borderRadius: BorderRadius.circular(25),
+                                  ),
+                                  child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          "$counter",
+                                          style: TextStyle(
+                                            color: Colors.black87,
+                                            fontSize: 32,
+                                          ),
+                                        ),
+                                      ]
+                                  ),
+                                ),
+                              ),
+                              GestureDetector(
+                                behavior: HitTestBehavior.opaque,
+                                onTap: () {
+                                  setState(() {
+                                    counter ++;
+                                    price += 6500;
+                                  });
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.all(10),
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: lightGreyColor,
+                                    borderRadius: BorderRadius.circular(25),
+                                  ),
+                                  child: Icon(
+                                    Icons.add,
+                                    color: Colors.black87,
+                                    size: 32,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            GestureDetector(
-                              onTap: () {
-                                print("Hmmmmm");
-                                setState(() {
-                                  print("Hmmmmm");
-                                  if(counter > 1) {
-                                    counter --;
-                                    price -= 6500;
-                                  }
-                                });
-                              },
-                              child: Container(
-                                padding: EdgeInsets.all(10),
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color: lightGreyColor,
-                                  borderRadius: BorderRadius.circular(25),
-                                ),
-                                child: Icon(
-                                  Icons.remove,
-                                  color: Colors.black87,
-                                  size: 32,
-                                ),
+                            Text(
+                              "السعر $price د.ع ",
+                              style: TextStyle(
+                                color: primaryColor,
+                                fontSize: 24,
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 20, right: 20,),
-                              child: Container(
-                                padding: EdgeInsets.all(5),
-                                width: 100,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color: lightGreyColor,
-                                  borderRadius: BorderRadius.circular(25),
-                                ),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                    "$counter",
-                                    style: TextStyle(
-                                      color: Colors.black87,
-                                      fontSize: 32,
-                                    ),
-                                  ),
-                                ]
-                                ),
-                              ),
-                            ),
-                            GestureDetector(
-                              behavior: HitTestBehavior.opaque,
-                              onTap: () {
-                                setState(() {
-                                  counter ++;
-                                  price += 6500;
-                                });
-                              },
-                              child: Container(
-                                padding: EdgeInsets.all(10),
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color: lightGreyColor,
-                                  borderRadius: BorderRadius.circular(25),
-                                ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Colors.black87,
-                                  size: 32,
-                                ),
-                              ),
+                              textAlign: TextAlign.center,
                             ),
                           ],
                         ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            "السعر $price د.ع ",
-                            style: TextStyle(
+                        Container(
+                          margin: EdgeInsets.only(top: 10,),
+                          padding: EdgeInsets.all(10),
+                          width: MediaQuery.of(context).size.width * 0.95,
+                          height: MediaQuery.of(context).size.height * 0.06,
+                          decoration: BoxDecoration(
                               color: primaryColor,
-                              fontSize: 24,
-                            ),
-                            textAlign: TextAlign.center,
+                              borderRadius: BorderRadius.circular(25)
                           ),
-                        ],
-                      ),
-                    ],
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                "اضافة الى السلة",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          )
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
